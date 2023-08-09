@@ -6,13 +6,30 @@ const App = () => {
       <div className="greeting">
         THE GREETING
       </div>
-      <ul>
-        <li>Hello!</li>
-        <li>My friend,</li>
-        <li>How are you?</li>
-      </ul>
+      <Menu />
+      <Posts />
     </div>
   );
+}
+
+const Menu = () => {
+  return (
+    <div>
+      <a href="#">About </a>
+      <a href="#">News </a>
+      <a href="#">Melodies </a>
+    </div>
+  )
+}
+
+const Posts = () => {
+  return (
+    <div>
+      <div>post Katya</div>
+      <div>post Irina</div>
+      <div>post Masha</div>
+    </div>
+  )
 }
 
 export default App;
