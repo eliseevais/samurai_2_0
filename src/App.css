@@ -1,9 +1,51 @@
-ul li {
-  color: violet;
+.app-wrapper {
+  background-color: #C4E9F5;
+  width: 1200px;
+  margin: 10px;
+  display: grid;
+  margin: 0 auto;
+  
+  grid-template-areas: 
+  "h h"
+  "n c";
+
+  grid-template-rows: 90px 1fr;
+  grid-template-columns: 2fr 10fr;
 }
 
-.greeting {
-  color: green;
-  font-weight: bold;
-  margin-left: 10px;
+.header {
+  background-color: #317F98;
+  margin: 10px;
+  grid-area: h;
+  padding: 10px;
+}
+
+.header img {
+  width: 50px;
+}
+
+.nav {
+  background-color: #317F98;
+  margin: 10px;
+  grid-area: n;
+  padding: 10px;
+}
+
+.content {
+  background-color: #80A4B0	;
+  margin: 10px;
+  grid-area: c;
+}
+
+.content img {
+  width: 1000px;
+  height: 420px;
+}
+
+.description {
+  margin: 10px;
+}
+
+.posts {
+  margin: 10px;
 }
