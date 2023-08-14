@@ -1,0 +1,17 @@
+.posts {
+  margin: 10px;
+}
+
+.addPostField {
+  display: flex;
+  margin: 10px 10px 10px 0;
+}
+
+.addPostField textarea {
+  margin: 0 10px 0 0;
+}
+
+.addPostField button {
+  height: 26px;
+  margin: auto 0;
+}
