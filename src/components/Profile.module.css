@@ -1,0 +1,26 @@
+.content {
+  background-color: #80A4B0	;
+  margin: 10px;
+  grid-area: c;
+}
+
+.content img {
+  width: 1000px;
+  height: 420px;
+}
+
+.description {
+  margin: 10px;
+}
+
+.posts {
+  margin: 10px;
+}
+
+.item {
+ color: black;
+}
+
+.item.active {
+  color: #C4E9F5
+}
