@@ -1,5 +1,6 @@
 .post {
   color: black;
+  margin-bottom: 10px;
 }
 
 .post img {
@@ -15,5 +16,5 @@
 }
 
 .post span {
-  margin-left: 14px;
+  margin-left: 8px;
 }
