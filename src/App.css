@@ -4,6 +4,7 @@
   margin: 10px;
   display: grid;
   margin: 0 auto;
+  min-height: 1000px;
   
   grid-template-areas: 
   "h h"
@@ -14,7 +15,12 @@
 }
 
 .app-wrapper-content {
-  background-color: #80A4B0	;
+  display: flex;
+  background-color: #80A4B0;
   margin: 10px;
   grid-area: c;
+}
+
+.app-wrapper a {
+  text-decoration: none;
 }

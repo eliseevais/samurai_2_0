@@ -3,6 +3,8 @@
   margin: 10px;
   grid-area: n;
   padding: 10px;
+  display: flex; 
+  flex-flow: column wrap
 }
 
 .item {
