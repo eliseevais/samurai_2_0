@@ -12,3 +12,9 @@
   grid-template-rows: 90px 1fr;
   grid-template-columns: 2fr 10fr;
 }
+
+.app-wrapper-content {
+  background-color: #80A4B0	;
+  margin: 10px;
+  grid-area: c;
+}
