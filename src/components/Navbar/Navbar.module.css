@@ -8,9 +8,16 @@
 }
 
 .item {
+  color: red
+}
+
+.item a {
   color: black
 }
 
-.item.active {
-  color: #C4E9F5
+.item a:active,
+.item a:focus {
+color: #C4E9F5;
 }
+
+
