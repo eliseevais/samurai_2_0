@@ -1,0 +1,26 @@
+.dialogs {
+  color: black;
+  display: flex;
+  padding: 10px;
+
+}
+
+.dialogItem {
+  width: 160px; 
+}
+
+.dialogItem .active {
+  color: #C4E9F5;
+}
+
+.dialog {
+
+}
+
+.messages {
+
+}
+
+.message {
+
+}
