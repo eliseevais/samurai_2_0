@@ -3,12 +3,12 @@
   margin: 10px;
   grid-area: n;
   padding: 10px;
-  display: flex; 
+  display: flex;
   flex-flow: column wrap
 }
 
 .item {
-  color: red
+  
 }
 
 .item a {
@@ -17,5 +17,5 @@
 
 .item a:active,
 .item a:focus {
-color: #C4E9F5;
+  color: #C4E9F5;
 }

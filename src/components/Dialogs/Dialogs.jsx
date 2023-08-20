@@ -1,14 +1,25 @@
+import { NavLink } from "react-router-dom";
 import styles from "./Dialogs.module.css"
 
 const Dialogs = (props) => {
   return (
     <div className={styles.dialogs}>
       <div className={styles.dialogItem}>
-        <div className={styles.dialog}>Sofa</div>
-        <div className={styles.dialog + ' ' + styles.active}>Nikolay</div>
-        <div className={styles.dialog}>Maria</div>
-        <div className={styles.dialog}>Denis</div>
-        <div className={styles.dialog}>Mark</div>
+        <div className={styles.dialog}>
+          <NavLink to="/dialogs/1">Sofa</NavLink>
+        </div>
+        <div className={`${styles.dialog} ${styles.active}`}>
+          <NavLink to="/dialogs/2">Nikolay</NavLink>
+        </div>
+        <div className={styles.dialog}>
+          <NavLink to="/dialogs/3">Maria</NavLink>
+        </div>
+        <div className={styles.dialog}>
+          <NavLink to="/dialogs/4">Denis</NavLink>
+        </div>
+        <div className={styles.dialog}>
+          <NavLink to="/dialogs/5">Mark</NavLink>
+        </div>
       </div>
       <div className={styles.messages}>
         <div className={styles.message}>Hello!</div>
