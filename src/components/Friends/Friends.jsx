@@ -1,6 +1,8 @@
+import styles from "./Friends.module.css";
+
 const Friends = (props) => {
   return (
-    <div>
+    <div className={styles.friendsListWrapper}>
       Friends list
     </div>
   )

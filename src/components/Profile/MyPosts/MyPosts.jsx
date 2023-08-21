@@ -4,7 +4,7 @@ import Post from "./Post/Post";
 const MyPosts = (props) => {
   return (
     <div className={styles.posts}>
-      <div>My posts</div>
+      <h4>My posts</h4>
       <div className={styles.addPostField}>
         <textarea></textarea>
       <button>Add post</button>

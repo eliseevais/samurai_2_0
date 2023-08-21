@@ -1,6 +1,10 @@
+import styles from "./News.module.css";
+
 const News = (props) => {
   return (
-    <div>News</div>
+    <div className={styles.newsWrapper}>
+      News
+    </div>
   )
 }
 
