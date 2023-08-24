@@ -1,0 +1,8 @@
+.dialog a {
+  color: black
+}
+
+.dialog a:active,
+.dialog a:focus {
+  color: #C4E9F5;
+}
