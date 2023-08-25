@@ -34,6 +34,11 @@ let store = {
     {id: 2, newsText: "I like my study course.", data: "2023-08-10"},
     {id: 3, newsText: "I can do it easy.", data: "2023-08-13"},
     {id: 4, newsText: "My temp is very good.", data: "2023-08-22"}
+  ], 
+  musicData: [
+    {id: 1, athor: "Sting", songName: "My heart"},
+    {id: 2, athor: "Muse", songName: "Big black hole"},
+    {id: 3, athor: "Lada", songName: "LaLaLand"},
   ]
 }
 
@@ -46,6 +51,7 @@ root.render(
       posts={store.postsData} 
       friendsList={store.friendsData} 
       newsFromIndexJS={store.newsData}
+      musicFromIndexJS={store.musicData}
     />
   </React.StrictMode>
 );

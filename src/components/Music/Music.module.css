@@ -1,0 +1,12 @@
+.musicItem {
+  padding: 10px;
+}
+
+.musicItem a {
+  color: black
+}
+
+.musicItem a:active,
+.musicItem a:focus {
+  color: #C4E9F5;
+}
