@@ -1,3 +1,12 @@
 .newsWrapper {
   padding: 10px;
 }
+
+.newsItem a {
+  color: black
+}
+
+.newsItem a:active,
+.newsItem a:focus {
+  color: #C4E9F5;
+}

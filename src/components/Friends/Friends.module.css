@@ -1,3 +1,16 @@
 .friendsListWrapper {
   padding: 10px;
 }
+
+.friendsItem {
+  display: flex;
+}
+
+.friendsItem a {
+  color: black
+}
+
+.friendsItem a:active,
+.friendsItem a:focus {
+  color: #C4E9F5;
+}

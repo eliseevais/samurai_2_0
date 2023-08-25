@@ -21,14 +21,32 @@ let store = {
     { id: 1, postText: "Hello, friends!", likesCount: 8 },
     { id: 2, postText: "How are you doing?", likesCount: 9 },
     { id: 3, postText: "I am fine!", likesCount: 4 },
+  ],
+  friendsData: [
+    { id: 1, name: "Olya", surname: "Markova"},
+    { id: 2, name: "Mikhail", surname: "Petrov"},
+    { id: 3, name: "Sasha", surname: "Blank"},
+    { id: 4, name: "Katya", surname: "Obukhova"},
+    { id: 5, name: "Gena", surname: "Fillimonov"},
+  ],
+  newsData: [
+    {id: 1, newsText: "I took a start!", data: "2023-08-07"},
+    {id: 2, newsText: "I like my study course.", data: "2023-08-10"},
+    {id: 3, newsText: "I can do it easy.", data: "2023-08-13"},
+    {id: 4, newsText: "My temp is very good.", data: "2023-08-22"}
   ]
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App dialogs={store.dialogsData} messages={store.messagesData}
-      posts={store.postsData} />
+    <App 
+      dialogs={store.dialogsData} 
+      messages={store.messagesData}
+      posts={store.postsData} 
+      friendsList={store.friendsData} 
+      newsFromIndexJS={store.newsData}
+    />
   </React.StrictMode>
 );
 
