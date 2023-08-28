@@ -2,7 +2,6 @@
   color: black;
   display: flex;
   padding: 10px;
-
 }
 
 .dialogItem {
@@ -11,4 +10,26 @@
 
 .dialogItem .active {
   color: #C4E9F5;
+}
+
+.dialogWrapper {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.addNewMessage {
+  display: flex;
+  
+}
+
+.addNewMessage textarea {
+  height: 26px;
+  margin: 10px 10px 10px 0;
+  min-width: 200px;
+}
+
+.addNewMessage button {
+  height: 26px;
+  margin: auto 0;
 }
