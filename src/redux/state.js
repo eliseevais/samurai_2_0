@@ -44,6 +44,15 @@ export const store = {
       { id: 3, athor: "Lada", songName: "LaLaLand" },
     ]
   }
-}
+};
+
+export let addPost = (postMessage) => {
+  let newPost = {
+    id: 4,
+    postText: postMessage,
+    likesCount: 5
+  }
+  store.profilePage.postsData.push(newPost)
+};
 
 
