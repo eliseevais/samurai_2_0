@@ -1,3 +1,5 @@
+import { rerenderEntireTree } from "../render";
+
 export const store = {
   dialogsPage: {
     dialogsData: [
@@ -52,7 +54,8 @@ export let addPost = (postMessage) => {
     postText: postMessage,
     likesCount: 5
   }
-  store.profilePage.postsData.push(newPost)
+  store.profilePage.postsData.push(newPost);
+  rerenderEntireTree(store);
 };
 
 
