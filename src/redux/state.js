@@ -20,7 +20,8 @@ export const store = {
       { id: 1, postText: "Hello, friends!", likesCount: 8 },
       { id: 2, postText: "How are you doing?", likesCount: 9 },
       { id: 3, postText: "I am fine!", likesCount: 4 },
-    ]
+    ],
+    newPostText: 'Hop! Hey! La-la-ley!'
   },
   friendsPage: {
     friendsData: [
@@ -48,14 +49,22 @@ export const store = {
   }
 };
 
-export let addPost = (postMessage) => {
+export let addPost = () => {
   let newPost = {
     id: 4,
-    postText: postMessage,
+    postText: store.profilePage.newPostText,
     likesCount: 5
   }
   store.profilePage.postsData.push(newPost);
+  store.profilePage.newPostText = '';
   rerenderEntireTree(store);
 };
+
+export let updateNewPostText = (newText) => {
+  store.profilePage.newPostText = newText;
+  rerenderEntireTree(store)
+};
+
+window.state = store;
 
 

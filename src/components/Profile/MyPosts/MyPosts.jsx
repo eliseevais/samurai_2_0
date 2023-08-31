@@ -5,14 +5,18 @@ import React from "react";
 const MyPosts = (props) => {
 
   let postMessages = props.posts.map(post => <Post message={post.postText}
-    likesCount={post.likesCount} key={post.id} />)
+    likesCount={post.likesCount} key={post.id} />);
 
   let addPost = () => {
+    props.addPost();
+  };
+
+  let onPostChange = () => {
     let text = newPostElement.current.value;
-    props.addPost(text);
-    console.log(newPostElement);
-    newPostElement.current.value = '';
-  }
+    props.updateNewPostText(text);
+    console.log(text);
+  };
+
 
   let newPostElement = React.createRef();
 
@@ -20,7 +24,9 @@ const MyPosts = (props) => {
     <div className={styles.posts}>
       <h4>My posts</h4>
       <div className={styles.addPostField}>
-        <textarea ref={newPostElement}></textarea>
+        <textarea ref={newPostElement}
+          onChange={onPostChange}
+          value={props.newPostText} />
         <button onClick={addPost}>Add post</button>
       </div>
       {postMessages}

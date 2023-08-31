@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { addPost } from './redux/state'
+import { addPost, updateNewPostText } from './redux/state'
 import { BrowserRouter } from 'react-router-dom';
 
 
@@ -21,7 +21,9 @@ export let rerenderEntireTree = (store) => {
           friendsList={store.friendsPage.friendsData}
           newsFromIndexJS={store.newsPage.newsData}
           musicFromIndexJS={store.musicPage.musicData}
+          newPostText={store.profilePage.newPostText}
           addPost={addPost}
+          updateNewPostText={updateNewPostText}
         />
       </BrowserRouter>
     </React.StrictMode>
