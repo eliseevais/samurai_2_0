@@ -1,4 +1,6 @@
-import { rerenderEntireTree } from "../render";
+let rerenderEntireTree = () => {
+  console.log('store was changed')
+}
 
 export const store = {
   dialogsPage: {
@@ -63,6 +65,10 @@ export let addPost = () => {
 export let updateNewPostText = (newText) => {
   store.profilePage.newPostText = newText;
   rerenderEntireTree(store)
+};
+
+export const subscribe = (observer) => {
+  rerenderEntireTree = observer;
 };
 
 window.state = store;
