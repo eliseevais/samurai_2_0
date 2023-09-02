@@ -4,7 +4,10 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import App from './App';
-import { addPost, updateNewPostText, store, subscribe } from './redux/state'
+import {
+  addPost, updateNewPostText, store,
+  subscribe, updateNewMessageText, sendMessage
+} from './redux/state'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -22,6 +25,9 @@ let rerenderEntireTree = (store) => {
           newPostText={store.profilePage.newPostText}
           addPost={addPost}
           updateNewPostText={updateNewPostText}
+          newMesssageText={store.dialogsPage.newMesssageText}
+          sendMessage={sendMessage}
+          updateNewMessageText={updateNewMessageText}
         />
       </BrowserRouter>
     </React.StrictMode>

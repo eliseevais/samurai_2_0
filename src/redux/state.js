@@ -15,7 +15,8 @@ export const store = {
       { id: 1, message: "Hello!" },
       { id: 2, message: "How are you doing?" },
       { id: 3, message: "I am fine, thank you. And you?" },
-    ]
+    ],
+    newMesssageText: 'Enter your text...'
   },
   profilePage: {
     postsData: [
@@ -64,6 +65,21 @@ export let addPost = () => {
 
 export let updateNewPostText = (newText) => {
   store.profilePage.newPostText = newText;
+  rerenderEntireTree(store);
+};
+
+export let sendMessage = () => {
+  let newMesssage = {
+    id: 4,
+    message: store.dialogsPage.newMesssageText
+  }
+  store.dialogsPage.messagesData.push(newMesssage);
+  store.dialogsPage.newMesssageText = '';
+  rerenderEntireTree(store);
+}
+
+export let updateNewMessageText = (newMesssageParameter) => {
+  store.dialogsPage.newMesssageText = newMesssageParameter;
   rerenderEntireTree(store)
 };
 
