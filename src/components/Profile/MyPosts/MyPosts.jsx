@@ -3,6 +3,8 @@ import Post from "./Post/Post";
 import React from "react";
 
 const MyPosts = (props) => {
+  
+  let newPostElement = React.createRef();
 
   let postMessages = props.posts.map(post => <Post message={post.postText}
     likesCount={post.likesCount} key={post.id} />);
@@ -16,9 +18,6 @@ const MyPosts = (props) => {
     props.updateNewPostText(text);
     console.log(text);
   };
-
-
-  let newPostElement = React.createRef();
 
   return (
     <div className={styles.posts}>

@@ -1,25 +1,42 @@
+import React from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./News.module.css";
 
 const NewsItem = (props) => {
-  let path="#";
+  let path = "#";
   return (
     <div className={styles.newsItem}>
       <NavLink to={path}>{props.data} || {props.newsText}</NavLink>
     </div>
   )
-}
+};
 
 const News = (props) => {
 
-  let newsToWall = props.newsFromApp.map(newsItem => <NewsItem 
-    data={newsItem.data} newsText={newsItem.newsText}  key={newsItem.id} />)
+  let newNewsElement = React.createRef();
 
-  console.log(newsToWall, "news")
+  let newsToWall = props.newsFromApp.map(newsItem => <NewsItem
+    data={newsItem.data} newsText={newsItem.newsText} key={newsItem.id} />);
+
+  let addNews = () => {
+    props.addNews();
+  };
+
+  let onNewsChange = () => {
+    let news = newNewsElement.current.value;
+    props.updateNewNewsText(news);
+    console.log(news, 'news')
+  };
 
   return (
     <div className={styles.newsWrapper}>
       {newsToWall}
+      <div className={styles.addNewsWrapper}>
+        <textarea ref={newNewsElement}
+          onChange={onNewsChange}
+          value={props.newNewsDataElement} />
+        <button onClick={addNews}>Add news</button>
+      </div>
     </div>
   )
 }

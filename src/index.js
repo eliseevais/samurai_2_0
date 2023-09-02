@@ -6,7 +6,7 @@ import './index.css';
 import App from './App';
 import {
   addPost, updateNewPostText, store,
-  subscribe, updateNewMessageText, sendMessage
+  subscribe, updateNewMessageText, sendMessage, addNews, updateNewNewsText
 } from './redux/state'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -28,6 +28,9 @@ let rerenderEntireTree = (store) => {
           newMesssageText={store.dialogsPage.newMesssageText}
           sendMessage={sendMessage}
           updateNewMessageText={updateNewMessageText}
+          newNewsDataElement={store.newsPage.newNewsDataElement}
+          addNews={addNews}
+          updateNewNewsText={updateNewNewsText}
         />
       </BrowserRouter>
     </React.StrictMode>

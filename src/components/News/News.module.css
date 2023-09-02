@@ -10,3 +10,17 @@
 .newsItem a:focus {
   color: #C4E9F5;
 }
+
+.addNewsWrapper {
+  display: flex;
+  margin: 10px 10px 10px 0;
+}
+
+.addNewsWrapper textarea {
+  margin: 0 10px 0 0;
+}
+
+.addNewsWrapper button {
+  height: 26px;
+  margin: auto 0;
+}

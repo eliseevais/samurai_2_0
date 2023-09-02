@@ -25,15 +25,20 @@ const App = (props) => {
           <Route path="/dialogs/*" element={
             <Dialogs
               dialogs={props.dialogs}
-              messages={props.messages} 
+              messages={props.messages}
               newMesssageText={props.newMesssageText}
               sendMessage={props.sendMessage}
               updateNewMessageText={props.updateNewMessageText}
-              />} />
+            />} />
           <Route path="/friends" element={<Friends
             friendsList={props.friendsList} />} />
-          <Route path="/news" element={<News
-            newsFromApp={props.newsFromIndexJS} />} />
+          <Route path="/news" element={
+            <News
+              newsFromApp={props.newsFromIndexJS}
+              newNewsDataElement={props.newNewsDataElement}
+              addNews={props.addNews}
+              updateNewNewsText={props.updateNewNewsText}
+            />} />
           <Route path="/music/*" element={<Music
             musicFromApp={props.musicFromIndexJS} />} />
         </Routes>

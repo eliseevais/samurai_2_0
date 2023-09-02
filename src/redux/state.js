@@ -41,7 +41,8 @@ export const store = {
       { id: 2, newsText: "I like my study course.", data: "2023-08-10" },
       { id: 3, newsText: "I can do it easy.", data: "2023-08-13" },
       { id: 4, newsText: "My temp is very good.", data: "2023-08-22" }
-    ]
+    ],
+    newNewsDataElement: "It's my 34th lesson."
   },
   musicPage: {
     musicData: [
@@ -56,7 +57,7 @@ export let addPost = () => {
   let newPost = {
     id: 4,
     postText: store.profilePage.newPostText,
-    likesCount: 5
+    likesCount: 0
   }
   store.profilePage.postsData.push(newPost);
   store.profilePage.newPostText = '';
@@ -76,7 +77,7 @@ export let sendMessage = () => {
   store.dialogsPage.messagesData.push(newMesssage);
   store.dialogsPage.newMesssageText = '';
   rerenderEntireTree(store);
-}
+};
 
 export let updateNewMessageText = (newMesssageParameter) => {
   store.dialogsPage.newMesssageText = newMesssageParameter;
@@ -86,6 +87,22 @@ export let updateNewMessageText = (newMesssageParameter) => {
 export const subscribe = (observer) => {
   rerenderEntireTree = observer;
 };
+
+export let addNews = () => {
+  let newNewsText = {
+    id: 5,
+    newsText: store.newsPage.newNewsDataElement, 
+    data: "2023-09-02"
+  }
+  store.newsPage.newsData.push(newNewsText);
+  store.newsPage.newNewsDataElement = '';
+  rerenderEntireTree(store);
+};
+
+export let updateNewNewsText = (newNewsTextProps) => {
+  store.newsPage.newNewsDataElement = newNewsTextProps;
+  rerenderEntireTree(store);
+}
 
 window.state = store;
 
