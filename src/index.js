@@ -5,7 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import {
-  addPost, updateNewPostText, store,
+  store, addPost, updateNewPostText,
   subscribe, updateNewMessageText, sendMessage, addNews, updateNewNewsText
 } from './redux/state'
 

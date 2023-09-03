@@ -53,7 +53,7 @@ export const store = {
   }
 };
 
-export let addPost = () => {
+export const addPost = () => {
   let newPost = {
     id: 4,
     postText: store.profilePage.newPostText,
@@ -64,12 +64,12 @@ export let addPost = () => {
   rerenderEntireTree(store);
 };
 
-export let updateNewPostText = (newText) => {
+export const updateNewPostText = (newText) => {
   store.profilePage.newPostText = newText;
   rerenderEntireTree(store);
 };
 
-export let sendMessage = () => {
+export const sendMessage = () => {
   let newMesssage = {
     id: 4,
     message: store.dialogsPage.newMesssageText
@@ -79,16 +79,13 @@ export let sendMessage = () => {
   rerenderEntireTree(store);
 };
 
-export let updateNewMessageText = (newMesssageParameter) => {
+export const updateNewMessageText = (newMesssageParameter) => {
   store.dialogsPage.newMesssageText = newMesssageParameter;
   rerenderEntireTree(store)
 };
 
-export const subscribe = (observer) => {
-  rerenderEntireTree = observer;
-};
 
-export let addNews = () => {
+export const addNews = () => {
   let newNewsText = {
     id: 5,
     newsText: store.newsPage.newNewsDataElement, 
@@ -99,11 +96,14 @@ export let addNews = () => {
   rerenderEntireTree(store);
 };
 
-export let updateNewNewsText = (newNewsTextProps) => {
+export const updateNewNewsText = (newNewsTextProps) => {
   store.newsPage.newNewsDataElement = newNewsTextProps;
   rerenderEntireTree(store);
 }
 
+export const subscribe = (observer) => {
+  rerenderEntireTree = observer;
+};
 window.state = store;
 
 
