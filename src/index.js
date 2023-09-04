@@ -4,42 +4,31 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import App from './App';
-import {
-  store, addPost, updateNewPostText,
-  subscribe, updateNewMessageText, sendMessage, addNews, updateNewNewsText
-} from './redux/state'
+import { storeOOP } from './redux/state';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-let rerenderEntireTree = (store) => {
+let rerenderEntireTree = (state) => {
   root.render(
     <React.StrictMode>
       <BrowserRouter>
         <App
-          dialogs={store.dialogsPage.dialogsData}
-          messages={store.dialogsPage.messagesData}
-          posts={store.profilePage.postsData}
-          friendsList={store.friendsPage.friendsData}
-          newsFromIndexJS={store.newsPage.newsData}
-          musicFromIndexJS={store.musicPage.musicData}
-          newPostText={store.profilePage.newPostText}
-          addPost={addPost}
-          updateNewPostText={updateNewPostText}
-          newMesssageText={store.dialogsPage.newMesssageText}
-          sendMessage={sendMessage}
-          updateNewMessageText={updateNewMessageText}
-          newNewsDataElement={store.newsPage.newNewsDataElement}
-          addNews={addNews}
-          updateNewNewsText={updateNewNewsText}
+          state={storeOOP._state}
+          addPost={storeOOP.addPost.bind(storeOOP)}
+          updateNewPostText={storeOOP.updateNewPostText.bind(storeOOP)}
+          sendMessage={storeOOP.sendMessage.bind(storeOOP)}
+          updateNewMessageText={storeOOP.updateNewMessageText.bind(storeOOP)}
+          addNews={storeOOP.addNews.bind(storeOOP)}
+          updateNewNewsText={storeOOP.updateNewNewsText.bind(storeOOP)}
         />
       </BrowserRouter>
     </React.StrictMode>
   )
 }
 
-rerenderEntireTree(store);
+rerenderEntireTree(storeOOP.getState());
 
-subscribe(rerenderEntireTree);
+storeOOP.subscribe(rerenderEntireTree);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

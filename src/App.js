@@ -17,30 +17,30 @@ const App = (props) => {
         <Routes>
           <Route path="/profile" element={
             <Profile
-              posts={props.posts}
-              newPostText={props.newPostText}
+              posts={props.state.profilePage.postsData}
+              newPostText={props.state.profilePage.newPostText}
               addPost={props.addPost}
               updateNewPostText={props.updateNewPostText}
             />} />
           <Route path="/dialogs/*" element={
             <Dialogs
-              dialogs={props.dialogs}
-              messages={props.messages}
-              newMesssageText={props.newMesssageText}
+              dialogs={props.state.dialogsPage.dialogsData}
+              messages={props.state.dialogsPage.messagesData}
+              newMesssageText={props.state.dialogsPage.newMesssageText}
               sendMessage={props.sendMessage}
               updateNewMessageText={props.updateNewMessageText}
             />} />
           <Route path="/friends" element={<Friends
-            friendsList={props.friendsList} />} />
+            friendsList={props.state.friendsPage.friendsData} />} />
           <Route path="/news" element={
             <News
-              newsFromApp={props.newsFromIndexJS}
-              newNewsDataElement={props.newNewsDataElement}
+              newsFromApp={props.state.newsPage.newsData}
+              newNewsDataElement={props.state.newsPage.newNewsDataElement}
               addNews={props.addNews}
               updateNewNewsText={props.updateNewNewsText}
             />} />
           <Route path="/music/*" element={<Music
-            musicFromApp={props.musicFromIndexJS} />} />
+            musicFromApp={props.state.musicPage.musicData} />} />
         </Routes>
       </div>
     </div>
