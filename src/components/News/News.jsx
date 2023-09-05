@@ -19,12 +19,14 @@ const News = (props) => {
     data={newsItem.data} newsText={newsItem.newsText} key={newsItem.id} />);
 
   let addNews = () => {
-    props.addNews();
+    let action = {type: 'ADD-NEWS'};
+    props.dispatch(action);
   };
 
   let onNewsChange = () => {
     let news = newNewsElement.current.value;
-    props.updateNewNewsText(news);
+    let action = {type: 'UPDATE-NEW-NEWS-TEXT', newNewsTextProps: news};
+    props.dispatch(action);
     console.log(news, 'news')
   };
 

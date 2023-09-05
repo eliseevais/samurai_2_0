@@ -49,65 +49,102 @@ export const storeOOP = {
       ]
     }
   },
-
-  getState() {
-    return this._state
-  },
-
   _callSubscriber() {
     console.log('store was changed')
   },
 
-  addPost() {
-    let newPost = {
-      id: 4,
-      postText: this._state.profilePage.newPostText,
-      likesCount: 0
-    }
-    this._state.profilePage.postsData.push(newPost);
-    this._state.profilePage.newPostText = '';
-    this._callSubscriber(this._state);
+  getState() {
+    return this._state
   },
-
-  updateNewPostText(newText) {
-    this._state.profilePage.newPostText = newText;
-    this._callSubscriber(this._state);
-  },
-
-  sendMessage() {
-    let newMesssage = {
-      id: 4,
-      message: this._state.dialogsPage.newMesssageText
-    }
-    this._state.dialogsPage.messagesData.push(newMesssage);
-    this._state.dialogsPage.newMesssageText = '';
-    this._callSubscriber(this._state);
-  },
-
-  updateNewMessageText(newMesssageParameter) {
-    this._state.dialogsPage.newMesssageText = newMesssageParameter;
-    this._callSubscriber(this._state);
-  },
-
-  addNews() {
-    let newNewsText = {
-      id: 5,
-      newsText: this._state.newsPage.newNewsDataElement,
-      data: "2023-09-02"
-    }
-    this._state.newsPage.newsData.push(newNewsText);
-    this._state.newsPage.newNewsDataElement = '';
-    this._callSubscriber(this._state);
-  },
-
-  updateNewNewsText(newNewsTextProps) {
-    this._state.newsPage.newNewsDataElement = newNewsTextProps;
-    this._callSubscriber(this._state);
-  },
-
   subscribe(observer) {
     this._callSubscriber = observer;
-  }
+  },
+
+  dispatch(action) {
+    if (action.type === 'ADD-POST') {
+      let newPost = {
+        id: 4,
+        postText: this._state.profilePage.newPostText,
+        likesCount: 0
+      }
+      this._state.profilePage.postsData.push(newPost);
+      this._state.profilePage.newPostText = '';
+      this._callSubscriber(this._state);
+    } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
+      this._state.profilePage.newPostText = action.newText;
+      this._callSubscriber(this._state);
+    } else if (action.type === 'SEND-MESSAGE') {
+      let newMesssage = {
+        id: 4,
+        message: this._state.dialogsPage.newMesssageText
+      }
+      this._state.dialogsPage.messagesData.push(newMesssage);
+      this._state.dialogsPage.newMesssageText = '';
+      this._callSubscriber(this._state);
+    } else if (action.type === 'UPDATE-NEW-MESSAGE-TEXT') {
+      this._state.dialogsPage.newMesssageText = action.newMesssageParameter;
+      this._callSubscriber(this._state);
+    } else if (action.type === 'ADD-NEWS') {
+      let newNewsText = {
+        id: 5,
+        newsText: this._state.newsPage.newNewsDataElement,
+        data: "2023-09-02"
+      }
+      this._state.newsPage.newsData.push(newNewsText);
+      this._state.newsPage.newNewsDataElement = '';
+      this._callSubscriber(this._state);
+    } else if (action.type === 'UPDATE-NEW-NEWS-TEXT') {
+      this._state.newsPage.newNewsDataElement = action.newNewsTextProps;
+      this._callSubscriber(this._state);
+    }
+  },
+
+  // addPost() {
+  //   let newPost = {
+  //     id: 4,
+  //     postText: this._state.profilePage.newPostText,
+  //     likesCount: 0
+  //   }
+  //   this._state.profilePage.postsData.push(newPost);
+  //   this._state.profilePage.newPostText = '';
+  //   this._callSubscriber(this._state);
+  // },
+
+  // updateNewPostText(newText) {
+  //   this._state.profilePage.newPostText = newText;
+  //   this._callSubscriber(this._state);
+  // },
+
+  // sendMessage() {
+  //   let newMesssage = {
+  //     id: 4,
+  //     message: this._state.dialogsPage.newMesssageText
+  //   }
+  //   this._state.dialogsPage.messagesData.push(newMesssage);
+  //   this._state.dialogsPage.newMesssageText = '';
+  //   this._callSubscriber(this._state);
+  // },
+
+  // updateNewMessageText(newMesssageParameter) {
+  //   this._state.dialogsPage.newMesssageText = newMesssageParameter;
+  //   this._callSubscriber(this._state);
+  // },
+
+  // addNews() {
+  //   let newNewsText = {
+  //     id: 5,
+  //     newsText: this._state.newsPage.newNewsDataElement,
+  //     data: "2023-09-02"
+  //   }
+  //   this._state.newsPage.newsData.push(newNewsText);
+  //   this._state.newsPage.newNewsDataElement = '';
+  //   this._callSubscriber(this._state);
+  // },
+
+  // updateNewNewsText(newNewsTextProps) {
+  //   this._state.newsPage.newNewsDataElement = newNewsTextProps;
+  //   this._callSubscriber(this._state);
+  // },
 }
 
 window.state = storeOOP;

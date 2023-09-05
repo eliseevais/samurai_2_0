@@ -10,13 +10,14 @@ const MyPosts = (props) => {
     likesCount={post.likesCount} key={post.id} />);
 
   let addPost = () => {
-    props.addPost();
+    let action = {type: 'ADD-POST'};
+    props.dispatch(action);
   };
 
   let onPostChange = () => {
     let text = newPostElement.current.value;
-    props.updateNewPostText(text);
-    console.log(text);
+    let action = {type: 'UPDATE-NEW-POST-TEXT', newText: text};
+    props.dispatch(action);
   };
 
   return (

@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./Dialogs.module.css"
-import { NavLink } from "react-router-dom";
 import { DialogsItem } from "./DialogsItem/DialogsItem";
 import { Message } from "./Message/Message";
 
@@ -14,12 +13,16 @@ const Dialogs = (props) => {
     <Message message={message.message} key={message.id} />);
 
   let sendMessage = () => {
-    props.sendMessage();
+    let action = {type: 'SEND-MESSAGE'};
+    props.dispatch(action);
   };
 
   let onMessageChange = () => {
     let text = newMessageElement.current.value;
-    props.updateNewMessageText(text);
+    let action = {
+      type: 'UPDATE-NEW-MESSAGE-TEXT', 
+      newMesssageParameter: text};
+    props.dispatch(action);
     console.log(text);
   };
 

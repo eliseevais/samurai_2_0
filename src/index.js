@@ -14,12 +14,13 @@ let rerenderEntireTree = (state) => {
       <BrowserRouter>
         <App
           state={storeOOP._state}
-          addPost={storeOOP.addPost.bind(storeOOP)}
-          updateNewPostText={storeOOP.updateNewPostText.bind(storeOOP)}
-          sendMessage={storeOOP.sendMessage.bind(storeOOP)}
-          updateNewMessageText={storeOOP.updateNewMessageText.bind(storeOOP)}
-          addNews={storeOOP.addNews.bind(storeOOP)}
-          updateNewNewsText={storeOOP.updateNewNewsText.bind(storeOOP)}
+          dispatch={storeOOP.dispatch.bind(storeOOP)}
+          // addPost={storeOOP.addPost.bind(storeOOP)}
+          // updateNewPostText={storeOOP.updateNewPostText.bind(storeOOP)}
+          // sendMessage={storeOOP.sendMessage.bind(storeOOP)}
+          // updateNewMessageText={storeOOP.updateNewMessageText.bind(storeOOP)}
+          // addNews={storeOOP.addNews.bind(storeOOP)}
+          // updateNewNewsText={storeOOP.updateNewNewsText.bind(storeOOP)}
         />
       </BrowserRouter>
     </React.StrictMode>
