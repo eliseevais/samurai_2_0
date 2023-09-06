@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./News.module.css";
+import { addNewsAC, updateNewNewsTextAC } from "../../redux/state";
 
 const NewsItem = (props) => {
   let path = "#";
@@ -19,14 +20,12 @@ const News = (props) => {
     data={newsItem.data} newsText={newsItem.newsText} key={newsItem.id} />);
 
   let addNews = () => {
-    let action = {type: 'ADD-NEWS'};
-    props.dispatch(action);
+    props.dispatch(addNewsAC());
   };
 
   let onNewsChange = () => {
     let news = newNewsElement.current.value;
-    let action = {type: 'UPDATE-NEW-NEWS-TEXT', newNewsTextProps: news};
-    props.dispatch(action);
+    props.dispatch(updateNewNewsTextAC(news));
     console.log(news, 'news')
   };
 

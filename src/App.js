@@ -20,8 +20,6 @@ const App = (props) => {
               posts={props.state.profilePage.postsData}
               newPostText={props.state.profilePage.newPostText}
               dispatch={props.dispatch}
-              // addPost={props.addPost}
-              // updateNewPostText={props.updateNewPostText}
             />} />
           <Route path="/dialogs/*" element={
             <Dialogs
@@ -29,18 +27,16 @@ const App = (props) => {
               messages={props.state.dialogsPage.messagesData}
               newMesssageText={props.state.dialogsPage.newMesssageText}
               dispatch={props.dispatch}
-              // sendMessage={props.sendMessage}
-              // updateNewMessageText={props.updateNewMessageText}
             />} />
-          <Route path="/friends" element={<Friends
-            friendsList={props.state.friendsPage.friendsData} />} />
+          <Route path="/friends" element={
+            <Friends
+              friendsList={props.state.friendsPage.friendsData}
+            />} />
           <Route path="/news" element={
             <News
               newsFromApp={props.state.newsPage.newsData}
               newNewsDataElement={props.state.newsPage.newNewsDataElement}
               dispatch={props.dispatch}
-              // addNews={props.addNews}
-              // updateNewNewsText={props.updateNewNewsText}
             />} />
           <Route path="/music/*" element={<Music
             musicFromApp={props.state.musicPage.musicData} />} />

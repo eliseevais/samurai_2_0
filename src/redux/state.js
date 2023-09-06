@@ -1,3 +1,10 @@
+const ADD_POST = 'ADD-POST';
+const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+const SEND_MESSAGE = 'SEND-MESSAGE';
+const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT';
+const ADD_NEWS = 'ADD-NEWS';
+const UPDATE_NEW_NEWS_TEXT = 'UPDATE-NEW-NEWS-TEXT';
+
 export const storeOOP = {
   _state: {
     dialogsPage: {
@@ -61,7 +68,7 @@ export const storeOOP = {
   },
 
   dispatch(action) {
-    if (action.type === 'ADD-POST') {
+    if (action.type === ADD_POST) {
       let newPost = {
         id: 4,
         postText: this._state.profilePage.newPostText,
@@ -70,10 +77,10 @@ export const storeOOP = {
       this._state.profilePage.postsData.push(newPost);
       this._state.profilePage.newPostText = '';
       this._callSubscriber(this._state);
-    } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
+    } else if (action.type === UPDATE_NEW_POST_TEXT) {
       this._state.profilePage.newPostText = action.newText;
       this._callSubscriber(this._state);
-    } else if (action.type === 'SEND-MESSAGE') {
+    } else if (action.type === SEND_MESSAGE) {
       let newMesssage = {
         id: 4,
         message: this._state.dialogsPage.newMesssageText
@@ -81,10 +88,10 @@ export const storeOOP = {
       this._state.dialogsPage.messagesData.push(newMesssage);
       this._state.dialogsPage.newMesssageText = '';
       this._callSubscriber(this._state);
-    } else if (action.type === 'UPDATE-NEW-MESSAGE-TEXT') {
+    } else if (action.type === UPDATE_NEW_MESSAGE_TEXT) {
       this._state.dialogsPage.newMesssageText = action.newMesssageParameter;
       this._callSubscriber(this._state);
-    } else if (action.type === 'ADD-NEWS') {
+    } else if (action.type === ADD_NEWS) {
       let newNewsText = {
         id: 5,
         newsText: this._state.newsPage.newNewsDataElement,
@@ -93,59 +100,36 @@ export const storeOOP = {
       this._state.newsPage.newsData.push(newNewsText);
       this._state.newsPage.newNewsDataElement = '';
       this._callSubscriber(this._state);
-    } else if (action.type === 'UPDATE-NEW-NEWS-TEXT') {
+    } else if (action.type === UPDATE_NEW_NEWS_TEXT) {
       this._state.newsPage.newNewsDataElement = action.newNewsTextProps;
       this._callSubscriber(this._state);
     }
   },
-
-  // addPost() {
-  //   let newPost = {
-  //     id: 4,
-  //     postText: this._state.profilePage.newPostText,
-  //     likesCount: 0
-  //   }
-  //   this._state.profilePage.postsData.push(newPost);
-  //   this._state.profilePage.newPostText = '';
-  //   this._callSubscriber(this._state);
-  // },
-
-  // updateNewPostText(newText) {
-  //   this._state.profilePage.newPostText = newText;
-  //   this._callSubscriber(this._state);
-  // },
-
-  // sendMessage() {
-  //   let newMesssage = {
-  //     id: 4,
-  //     message: this._state.dialogsPage.newMesssageText
-  //   }
-  //   this._state.dialogsPage.messagesData.push(newMesssage);
-  //   this._state.dialogsPage.newMesssageText = '';
-  //   this._callSubscriber(this._state);
-  // },
-
-  // updateNewMessageText(newMesssageParameter) {
-  //   this._state.dialogsPage.newMesssageText = newMesssageParameter;
-  //   this._callSubscriber(this._state);
-  // },
-
-  // addNews() {
-  //   let newNewsText = {
-  //     id: 5,
-  //     newsText: this._state.newsPage.newNewsDataElement,
-  //     data: "2023-09-02"
-  //   }
-  //   this._state.newsPage.newsData.push(newNewsText);
-  //   this._state.newsPage.newNewsDataElement = '';
-  //   this._callSubscriber(this._state);
-  // },
-
-  // updateNewNewsText(newNewsTextProps) {
-  //   this._state.newsPage.newNewsDataElement = newNewsTextProps;
-  //   this._callSubscriber(this._state);
-  // },
 }
+
+export let addPostAC = () => {
+  return { type: ADD_POST };
+};
+
+export let updateNewPostAC = (text) => {
+  return { type: UPDATE_NEW_POST_TEXT, newText: text }
+};
+
+export let sendMessageAC = () => {
+  return { type: SEND_MESSAGE }
+};
+
+export let updateNewMessageTextAC = (text) => {
+  return { type: UPDATE_NEW_MESSAGE_TEXT, newMesssageParameter: text };
+};
+
+export let addNewsAC = () => {
+  return { type: ADD_NEWS }
+};
+
+export let updateNewNewsTextAC = (news) => {
+  return { type: UPDATE_NEW_NEWS_TEXT, newNewsTextProps: news }
+};
 
 window.state = storeOOP;
 
